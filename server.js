@@ -6,15 +6,15 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-  res.send('ariticle one will be served in a while');
+  res.send('ariticle-one will be served in a while');
 });
 
 app.get('/', function (req, res) {
-  res.send('ariticle two will be served in a while');
+  res.send('ariticle-two will be served in a while');
 });
 
 app.get('/', function (req, res) {
-  res.send('ariticle three will be served in a while');
+  res.send('ariticle-three will be served in a while');
 });
 
 app.get('/', function (req, res) {
