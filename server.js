@@ -5,16 +5,68 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-});
+var articles={
+    'article-one':{
+        title: 'ARTICLE ONE',
+        content: `<p>
+                     I completed my higher studies in Chennai. Ambition is to become an app developer.
+                  </p>`,
+        profile: `<ul>
+                <li>Name: Mohan Kumar S</li>
+                <li>DOB: 27/01/1997</li>
+                <li>Sex: Male</li>
+             </ul>`
+    },
+    'article-two':{
+        title: 'ARTICLE TWO',
+        content: `<p>
+                     I completed my higher studies in Chennai. Ambition is to become an app developer.
+                  </p>`,
+         profile: `<ul>
+                <li>Name: Mohan Kumar S</li>
+                <li>DOB: 27/01/1997</li>
+                <li>Sex: Male</li>
+             </ul>`
+    },
+    'article-three':{
+        title: 'ARTICLE THREE',
+        content: `<p>
+                     I completed my higher studies in Chennai. Ambition is to become an app developer.
+                  </p>`,
+        profile: `<ul>
+                <li>Name: Mohan Kumar S</li>
+                <li>DOB: 27/01/1997</li>
+                <li>Sex: Male</li>
+             </ul>`
+    },
+    
+};
+function createTemplate (data){
+var title=data.title;
+var content=data.content;
+var profile=data.profile;
+var htmlTemplate=
+    `<html>
+    <head>
+        <title>${title}</title>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class='container'>
+             <a href="/">HOME</a>
+             <hr/>
+             <h3>My Profile</h3>
+             ${profile}
+             ${content}
+        </div>
+    </body>
+</html>`;
+return htmlTemplate
+}
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName', function (req, res) {
+    var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/', function (req, res) {
