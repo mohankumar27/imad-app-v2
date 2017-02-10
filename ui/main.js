@@ -1,4 +1,4 @@
-var button=document.getElementById("click");
+var button=document.getElementById('click');
 
 
 
