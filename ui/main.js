@@ -18,7 +18,7 @@ request.onreadystatechange=function()
         }
     }
 };
-request.open('GET','http://http://mohankumar27.imad.hasura-app.io/counter',true);
-//request.send(null);
+request.open('GET','http://mohankumar27.imad.hasura-app.io/counter',true);
+request.send(null);
 };
 
