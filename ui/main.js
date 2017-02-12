@@ -22,8 +22,6 @@ request.open('GET','http://mohankumar27.imad.hasura-app.io/counter',true);
 request.send(null);
 };
 
-var inputname=document.getElementById('namecontent');
-var name=inputname.value;
 var submit=document.getElementById('submit_btn');
 submit.onclick=function()
 {
@@ -47,6 +45,8 @@ submit.onclick=function()
             }
         }
     };  
+    var inputname=document.getElementById('namecontent');
+    var name=inputname.value;
     request.open('GET','http://mohankumar27.imad.hasura-app.io/submit?name=' + name,true);
     request.send(null);
 };
