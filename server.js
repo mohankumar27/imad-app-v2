@@ -7,7 +7,7 @@ var config = {
     user: 'mohankumar27',
     database: 'mohankumar27',
     host: 'db.imad.hausra-app.io',
-    port:'8080',
+    port:'5432',
     password: process.env.DB_PASSWORD
 };
 
