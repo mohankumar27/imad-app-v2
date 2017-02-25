@@ -71,11 +71,12 @@ return htmlTemplate;
 }
 
 var config = {
-  host: 'db.imad.hausra-app.io',
-  port:'5432',
-  user: 'mohankumar27',
-  password: process.env.DB_PASSWORD,
-  database: 'mohankumar27',
+    user: 'mohankumar27',
+    database: 'mohankumar27',
+    host: 'db.imad.hausra-app.io',
+    port:'5432',
+    password: process.env.DB_PASSWORD,
+  
 };
 var pool = new Pool(config);
 app.get('/test-db',function(req,res){
