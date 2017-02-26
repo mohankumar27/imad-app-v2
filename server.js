@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
 });
 
 
-var articles={
+/*var articles={
     'article-one':{
         title: 'ARTICLE ONE',
         content: `<p>
@@ -54,7 +54,7 @@ var articles={
              </ul>`
     },
     
-};
+};*/
 function createTemplate (data){
 var title=data.title;
 var content=data.content;
