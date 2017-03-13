@@ -33,7 +33,6 @@ submit.onclick=function()
         {
             if(request.status===200)
             {
-                console.log('user logged in successfully');
                 alert('login successful');
             }else if(request.status===403){
                 alert('username or password is invalid');
